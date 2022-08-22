@@ -22,6 +22,26 @@ module.exports = {
 }
 ```
 
+- Start the Gatsby's development server
+```bash
+gatsby develop
+```
+
+- Navigate to URL
+```
+http://localhost:8000/endpoints.json
+```
+
+- You'll get list of all pages and blog posts in JSON format e.g.
+```json
+[
+   "/blog/sample-article",
+   "/blog/sample2-article/",
+   "/page1/",
+   "/page2/"
+]
+```
+
 License
 --------
 
