@@ -4,5 +4,15 @@
   "description": "Gatsby plugin that exposes all gatsby pages under /endpoints.json path",
   "main": "gatsby-node.js",
   "author": "Bart Zuber (bartlomiej.zuber@outlook.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "gatsby",
+    "plugin",
+    "list",
+    "all",
+    "pages",
+    "endpoints",
+    "urls",
+    "api"
+  ]
 }
