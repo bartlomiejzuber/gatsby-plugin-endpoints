@@ -1,4 +1,5 @@
-# 📖 gatsby-plugin-endpoints
+# 📖 gatsby-plugin-endpoints [![npm](https://img.shields.io/npm/v/gatsby-plugin-endpoints.svg)](https://www.npmjs.com/package/gatsby-plugin-endpoints) [![License](https://img.shields.io/npm/l/gatsby-plugin-endpoints.svg)](https://github.com/bartlomiejzuber/gatsby-plugin-endpoints/blob/main/LICENSE)
+
 Simple Gatsby plugin that exposes an endpoint that lists all the Gatsby's pages URLs.
 
 
