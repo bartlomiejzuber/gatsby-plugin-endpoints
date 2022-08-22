@@ -21,12 +21,8 @@ module.exports = {
 }
 ```
 
-## License
+License
+--------
 
-[MIT](https://choosealicense.com/licenses/mit/)
-
-
-## Authors
-
-- [@bartlomiejzuber](https://www.github.com/bartlomiejzuber)
+Made with :sparkling_heart: by [Bartlomiej Zuber (bartlomiej.zuber@outlook.com)](mailto:bartlomiej.zuber@outlook.com) and licensed under the [MIT License](LICENSE)
 
