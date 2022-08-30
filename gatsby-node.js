@@ -5,7 +5,7 @@ exports.createPages = ({ graphql: graphqlObj }) => {
   graphql = graphqlObj;
 };
 
-exports.onCreateDevServer = async ({ app }) => {
+exports.onCreateDevServer = async ({ app }, pluginOptions = {}) => {
     app.get("/endpoints.json", async (req, res) => {
       let {
         data: {
@@ -25,6 +25,10 @@ exports.onCreateDevServer = async ({ app }) => {
           }
         `
       );
+
+      if (pluginOptions.filter) {
+        allPagesData = allPagesData.filter((item) => pluginOptions.filter(item, req));
+      }
   
       res.setHeader("Content-Type", "application/json");
       res.send(
