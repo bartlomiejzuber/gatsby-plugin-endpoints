@@ -42,6 +42,54 @@ http://localhost:8000/endpoints.json
 ]
 ```
 
+## Configuration
+
+Plugin allows to apply filter to the list of pages.
+For that it's required to pass a function as a configuration property for `filter` e.g.:
+
+- Simple filter usage - `gatsby.config.js`: 
+```javascript
+module.exports = {
+  // ... Other settings
+  plugins: [
+    // ... Other plugins
+    {
+      resolve: `gatsby-plugin-endpoints`,
+      options: {
+        filter: ({ node: { path, pageContext } }) => !["dev-404-page", "/404.html"].includes(path), // Filter out pages ["dev-404-page", "/404.html"] from the list
+    },
+  ]
+}
+```
+
+- Advanced filter usage - `gatsby.config.js`: 
+```javascript
+module.exports = {
+  // ... Other settings
+  plugins: [
+    // ... Other plugins
+    {
+      resolve: `gatsby-plugin-endpoints`,
+      options: {
+        // Second param passed to filter is 'req' object from express server -> https://expressjs.com/en/api.html#req
+        filter: ({ node: { path, pageContext } }, { query: { maxAge } }) => {
+          // Get query param from request -> http://localhost:8000/endpoints.json?maxAge=1
+          if (maxAge) {
+            // Filter pages based on the date passed in page context object during page creation https://www.gatsbyjs.com/docs/reference/config-files/actions/#createPage
+            return pageContext?.date
+                ? subtractDate(new Date(), { years: maxAge }) <
+                  parseISO(pageContext.date, new Date())
+                : true;
+          }
+          
+          return true;
+        }
+      },
+    },
+  ]
+}
+```
+
 License
 --------
 
