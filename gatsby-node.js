@@ -5,7 +5,7 @@ exports.createPages = ({ graphql: graphqlObj }) => {
   graphql = graphqlObj;
 };
 
-exports.onPostBootstrap = async () => {
+exports.onPostBootstrap = async ({ options }) => {
   let {
     data: {
       pages: { edges: allPagesData },
