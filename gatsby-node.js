@@ -25,6 +25,14 @@ exports.onPostBootstrap = async () => {
     `
   );
 
+  const pluginOptions = options["gatsby-plugin-endpoints"];
+
+  if (pluginOptions.filter) {
+    allPagesData = allPagesData.filter((item) =>
+      pluginOptions.filter(item, req)
+    );
+  }
+
   const endpoints = allPagesData.map(({ node }) => node.path);
 
   require("fs/promises").writeFile(

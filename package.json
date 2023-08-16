@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-endpoints",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Gatsby plugin that exposes all gatsby pages under /endpoints.json path",
   "main": "gatsby-node.js",
   "author": "Bart Zuber (bartlomiej.zuber@outlook.com)",
