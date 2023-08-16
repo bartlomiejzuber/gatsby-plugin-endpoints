@@ -5,7 +5,7 @@ exports.createPages = ({ graphql: graphqlObj }) => {
   graphql = graphqlObj;
 };
 
-exports.onPostBootstrap = async ({ options }) => {
+exports.onPostBootstrap = async (_, pluginOptions) => {
   let {
     data: {
       pages: { edges: allPagesData },
@@ -25,9 +25,7 @@ exports.onPostBootstrap = async ({ options }) => {
     `
   );
 
-  const pluginOptions = options["gatsby-plugin-endpoints"];
-
-  if (pluginOptions.filter) {
+  if (pluginOptions?.filter) {
     allPagesData = allPagesData.filter((item) =>
       pluginOptions.filter(item, req)
     );
