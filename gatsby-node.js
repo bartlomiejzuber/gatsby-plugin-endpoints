@@ -27,7 +27,7 @@ exports.onPostBootstrap = async (_, pluginOptions) => {
 
   if (pluginOptions?.filter) {
     allPagesData = allPagesData.filter((item) =>
-      pluginOptions.filter(item, req)
+      pluginOptions.filter(item)
     );
   }
 
